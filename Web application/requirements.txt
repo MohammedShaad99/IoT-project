@@ -1,0 +1,14 @@
+Flask
+Flask-login 
+Flask-sqlalchemy
+Flask-bcrypt
+Flask-wtf
+WTForms
+SQLAlchemy
+bcrypt
+flask-heroku
+gunicorn
+psycopg2-binary 
+joblib
+sklearn
+flask_admin

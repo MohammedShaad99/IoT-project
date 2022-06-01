@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% for room in rooms  %}
+    <div class="row">
+      <div class="column">
+        <div class="card"> 
+          <tr>
+          <h3>{{ room.name }}</h3>
+          {% set lastvalue = roominfo.query.filter_by(room_id=room.id).order_by(roominfo.id.desc()).first() %}
+          <label for="capacity">Live Capacity:</label>
+          <p><meter id="capacity" min="0" max={{ room.capacity }} value ={{ lastvalue.liveCapacity }} optimum=20 > </meter> </p>
+          <p>current temp : {{ lastvalue.temp }}</p>
+          <p>noise levels : {{ lastvalue.sound }}</p>
+          <p>current humid : {{ lastvalue.humdity }}</p>
+
+          <p>current light : {{ lastvalue.light }}</p>
+          </tr> 
+        </div>
+      </div>
+    </div>
+
+            
+
+
+
+
+    {% endfor %}
+    
+
+{% endblock content %}
